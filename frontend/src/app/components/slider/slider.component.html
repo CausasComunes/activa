@@ -1,0 +1,15 @@
+<div class="scroller-horizontal-container">
+	<div class="slider">
+		<div class="handle handlePrev noselect" (click)="scrollHorizontal('l')">
+ 			<i #leftPaddleScroll class="material-icons indicator-icon left">keyboard_arrow_left</i>
+		</div>
+            
+		<div #scrollableWrapper class="scrolling-wrapper-flexbox">
+			<ng-content></ng-content>
+		</div>
+            
+		<div class="handle handleNext noselect" (click)="scrollHorizontal('r')">
+			<i #rightPaddleScroll class="material-icons indicator-icon right">keyboard_arrow_right</i>
+		</div>
+	</div>
+</div>

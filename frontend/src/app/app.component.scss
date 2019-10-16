@@ -1,0 +1,16 @@
+@import "../theme/variables";
+.newsletter-success {
+    font-family: $lato;
+    @include font-size-text();
+}
+
+.newsletter{
+  .error{
+    color: red;
+  }
+}
+
+.sumate{
+    color: $azul-oscuro;
+    @include font-size-media-medium(18px, 22px);
+}

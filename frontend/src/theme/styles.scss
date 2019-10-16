@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "variables";
+@import "general-classes";
+.desc-strip {
+    color: $negro;
+    padding: 40px 0 10px;
+    font-family: $lato;
+}
+
+.full-list-strip {
+    padding: 20px 0;
+    font-family: $lato;
+}
+
+.ui-overlaypanel-content {
+    margin-top: -7px;
+    padding: 0px !important;
+}
+
+.ui-sidebar {
+    z-index: 1020 !important;
+    overflow: scroll !important;
+}
+
+.ui-confirmdialog {
+    z-index: 1030 !important;
+}
+
+.ui-dialog-mask {
+    visibility: hidden;
+    display: none;
+}
+
+.ui-calendar {
+    width: 100% !important;
+}
+
+.ui-inputtext {
+    width: 100% !important;
+    border: 1px solid #ced4da !important;
+}
+
+.ui-autocomplete {
+    width: 100% !important;
+}
+
+
+/* Details */
+
+.file-button {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .cke_1 {
+        width: 99vw !important;
+        margin-left: -3vw !important;
+    }
+}
+
+p {
+    font-family: $basker;
+}
+
+.nav-link {
+    color: $negro !important;
+}
+
+.inicio-nav-link {
+    color: $verde !important;
+    font-family: $lato;
+}
+
+.img-principal-container {
+    padding: 0px !important;
+}

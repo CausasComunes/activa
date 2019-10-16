@@ -1,0 +1,14 @@
+<div class="project-card mb-3 row mx-0">
+
+    <div class="col-12 col-md-4 col-img {{ centerImg ? 'center-img' : '' }}" [style.background-image]="backgroundImage" [style.background-color]="bgColor" [routerLink]="['/proyecto',project.slug]" fragment="activa">
+        <div class="project-title">{{causa}}</div>
+    </div>
+
+    <div class="col-12 col-md-8 py-4 col-txt">
+        <div class="project-description text-justify pb-2" [innerHTML]="projectDescription"></div>
+        <div class="project-link">
+            <button class="btn btn-primary btn-aec" type="button" [routerLink]="['/proyecto',project.slug]" fragment="activa">Activá Causas Comunes</button>
+        </div>
+    </div>
+
+</div>

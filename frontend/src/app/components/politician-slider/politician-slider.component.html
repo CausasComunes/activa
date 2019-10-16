@@ -1,0 +1,15 @@
+<slider>
+    <ng-template ngFor let-politician [ngForOf]="politiciansList">
+        <politician-card [project]="project" [politician]="politician"></politician-card>
+    </ng-template>
+</slider>
+
+<ng-template [ngIf]="!project.es_debate || (politiciansList && politiciansList.length > 6)">
+  <div class="container">
+      <div class="row full-list-strip">
+          <div class="col-12">
+              <button type="button" class="btn btn-primary btn-aec btn-lg" [routerLink]="['/lista', project.slug]">Ver listado completo de candidatxs&emsp;<small><i class="fas fa-chevron-right"></i></small></button>
+          </div>
+      </div>
+  </div>
+</ng-template>

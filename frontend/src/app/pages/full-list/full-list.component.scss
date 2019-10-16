@@ -1,0 +1,55 @@
+@import '../../../theme/variables.scss';
+
+.message {
+    font-family: $lato;
+    font-size: 20px;
+    color: $gris-texto;
+}
+
+.pos {
+    display: inline-block;
+    font-display: $basker;
+    font-size: 13px;
+    color: $gris-texto;
+    margin-left: 6px;
+}
+
+.aFavor {
+    border-bottom: 3px solid $aFavor;
+}
+
+.enContra {
+    border-bottom: 3px solid $enContra;
+}
+
+.noConfirmado {
+    border-bottom: 3px solid $noConfirmado;
+}
+
+.seAbstiene {
+    border-bottom: 3px solid $seAbstiene;
+}
+
+.filter-title {
+    font-display: $basker;
+    font-size: 20px;
+    color: $gris-texto;
+}
+
+.filter-label {
+    color: $gris-texto;
+    font-family: $lato;
+}
+
+.btn-filter {
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: $blanco;
+}
+
+.pol-card {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 8px 0 20px;
+}

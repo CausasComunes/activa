@@ -1,0 +1,28 @@
+<h2 class="title">El conteo de votos {{getEnd()}}</h2>
+
+<div class="row conteo-body">
+    <div class="bar-group col col-12 col-md-7 col-lg-5">
+        <span class="bar-title"><span class="numero">{{aFavor}}</span>&emsp;A FAVOR</span>
+        <div class="bar-container">
+            <div class="bar aFavor" [style.width]="getPorc(aFavor) + '%'"></div>
+        </div>
+    </div>
+    <div class="bar-group col col-12 col-md-7 col-lg-5">
+        <span class="bar-title"><span class="numero">{{enContra}}</span>&emsp;EN CONTRA</span>
+        <div class="bar-container">
+            <div class="bar enContra" [style.width]="getPorc(enContra) + '%'"></div>
+        </div>
+    </div>
+    <div class="bar-group col col-12 col-md-7 col-lg-5">
+        <span class="bar-title"><span class="numero">{{noConfirmado}}</span>&emsp;NO CONFIRMADOS</span>
+        <div class="bar-container">
+            <div class="bar noConfirmado" [style.width]="getPorc(noConfirmado) + '%'"></div>
+        </div>
+    </div>
+    <div class="bar-group col col-12 col-md-7 col-lg-5">
+        <span class="bar-title"><span class="numero">{{seAbstiene}}</span>&emsp;SE ABSTIENE</span>
+        <div class="bar-container">
+            <div class="bar seAbstiene" [style.width]="getPorc(seAbstiene) + '%'"></div>
+        </div>
+    </div>
+</div>

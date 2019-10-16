@@ -1,0 +1,50 @@
+
+<div class="container py-md-5 change-org">
+  
+    <ng-template [ngIf]="propuestasResumen">
+      <div class="row mb-3">
+          <div class="col">
+              <h3 class="title mb-3 text-center text-md-left">Lo que proponemos</h3>
+              <p class="text" [innerHTML]="propuestasResumen"></p>
+          </div>
+      </div>
+
+      <div class="row">
+      <ng-template ngFor let-propuesta [ngForOf]="propuestas">
+        <div class="propuesta col-6 mb-4">
+          <h1>{{propuesta[0]}}</h1>
+          <span>{{propuesta[1]}}</span>
+        </div>
+      </ng-template>
+      </div>
+    </ng-template>
+  
+    <ng-template [ngIf]="propuestaLink">
+      <div class="row text-center">
+        <div class="col mt-4 mb-3">
+          <a target="_blank" rel="noopener noreferrer" href="{{propuestaLink}}"><button type="button" class="btn btn-primary btn-aec btn-lg">Leé más de este proyecto</button></a>
+        </div>
+      </div>
+    </ng-template>
+  
+    <ng-template [ngIf]="changeLink">
+      <div class="row text-center">
+        <div class="firmar-change col mt-4 mb-3">
+          <span>{{changeText}}</span>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <a target="_blank" rel="noopener noreferrer" href="{{changeLink}}"><button class="btn btn-change mb-5 mb-md-0">¡Firmá acá!</button></a>
+      </div>
+    </ng-template>
+  
+</div>
+
+<!--<div class="container">
+    <div class="row full-list-strip">
+        <div class="col-12">
+            <button type="button" class="btn btn-primary btn-aec btn-lg text-uppercase" [routerLink]="['/lista', project.slug]">Ver listado completo&emsp;<small><i class="fas fa-chevron-right"></i></small></button>
+        </div>
+    </div>
+</div>-->

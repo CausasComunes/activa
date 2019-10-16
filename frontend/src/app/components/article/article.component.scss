@@ -1,0 +1,23 @@
+@import '../../../theme/variables.scss';
+.article-container {
+    margin: auto;
+    background: $blanco;
+}
+
+.article-preview {
+    height: 220px;
+    display: block;
+    overflow: hidden;
+    color: $gris-texto;
+}
+
+.article-image {
+    //box-shadow: 0 0 0 6px #fff inset;
+    background-size: cover !important;
+}
+
+.modal-content {
+    border-radius: 0px;
+    padding: 15px;
+    color: $gris-texto;
+}

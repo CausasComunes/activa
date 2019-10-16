@@ -1,0 +1,54 @@
+@import '../../../theme/variables.scss';
+.conteo-body {
+    padding-bottom: 50px;
+}
+
+.title {
+    font-family: $basker;
+    color: $azul-oscuro;
+    @media (min-width: 992px) {
+        margin-left: 4%;
+    }
+}
+
+.bar-title {
+    color: $gris-texto;
+    font-family: $lato;
+    font-size: 17px;
+}
+
+.numero {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.bar-group {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+}
+
+.bar {
+    height: 10px;
+    background-color: $verde;
+}
+
+.aFavor {
+    background-color: $aFavor;
+}
+
+.enContra {
+    background-color: $enContra;
+}
+
+.noConfirmado {
+    background-color: $noConfirmado;
+}
+
+.seAbstiene {
+    background-color: $seAbstiene;
+}

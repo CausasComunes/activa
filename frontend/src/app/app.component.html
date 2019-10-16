@@ -1,0 +1,81 @@
+<div style="min-height:100vh">
+    <!-- Header -->
+    <app-header></app-header>
+  
+    <!-- Router -->
+    <router-outlet id="activa"></router-outlet>
+
+    <div class="w-100 info-strip bg-blanco">
+        <!-- Info -->
+        <div class="container py-md-5">
+            <div class="row">
+                <div class="col">
+                    <h3 class="info-title mb-4 text-center text-md-left">¿Qué es Causas Comunes?</h3>
+                    <p class="info-text text-justify">
+                        Somos ecologistas, feministas, personas preocupadas por la precarización laboral y la ausencia de políticas públicas que nos garanticen trabajo y vivienda digna. Venimos construyendo alternativas, movilizándonos, encontrándonos en las calles, en las redes, desde diversos espacios y territorios. Tenemos ideas, tenemos propuestas y buscamos que tengan impacto real. 
+                        <br>
+                        <br> Queremos copar el espacio electoral y aportar a una democracia con mayor participación de todes; que las elecciones no queden en ir a votar y nada más. Queremos estimular el debate y aportar con soluciones concretas porque no estamos dispuestos/as a seguir postergando cuestiones que necesitan ser resueltas hoy. Desde Causas Comunes vamos a incidir para que en estas Elecciones 2019 escuchemos compromisos de nuestros/as candidatos/as con respecto a las políticas sobre drogas, la transparencia, nuestros derechos laborales, con perspectivas amplias, inclusivas y diversas.
+                        <br>
+                        <br><span class="sumate">¡Sumate!</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-100 follow-strip bg-azul-claro">
+        <div class="container py-2 py-md-5">
+            <div class="row px-2">
+                <div class="col col-12 col-md-6 col-lg-5">
+                    <h4 class="follow-title mb-3">Nuestras redes</h4>
+                    <a href="https://www.instagram.com/causascomunes/" target="_blank" class="follow-btn"><img class="mr-1" src="../assets/images/social_instagram_icon.svg"></a>
+                    <a href="https://www.facebook.com/Causas-Comunes-449280685874685/" target="_blank" class="follow-btn f-btn"><img class="mx-1" src="../assets/images/social_facebook_icon.svg"></a>
+                    <a href="https://twitter.com/causas_comunes" target="_blank" class="follow-btn"><img class="mx-1" src="../assets/images/social_twitter_icon.svg"></a>
+                    <a href="mailto:causascomunesx@gmail.com" target="_blank" class="follow-btn"><img class="mx-1" src="../assets/images/social_mail_icon.svg" height="46px"></a>
+                </div>
+                <div class="d-md-none col-12 blank-line">
+                </div>
+                <div class="col col-12 col-md-6 col-lg-7 newsletter pl-md-5">
+                    <h4 class="follow-title mb-3">Recibí nuestras noticias</h4>
+                    <form ngNoForm [formGroup]="formGroup" [hidden]="submitted">
+                        <div class="news-container">
+                            <input type="text" placeholder="Ingresá tu email." formControlName="email" class="news-input" name="EMAIL"/>
+                            <!--<input type="hidden" formControlName="project" name="project" id="newsletter_project" />-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a2ed796c70f5a1770cbcb80ba_885233fed6" tabindex="-1" value=""></div>
+                            <button type="button" class="btn btn-news mt-3 mt-lg-0 ml-0 ml-lg-2 d-block d-lg-inline-block" (click)="submitNewsletter()">Suscribirme</button>
+                        </div>
+                        <span class="error">{{newsletterMessage}}</span>
+                    </form>
+                    <h5 class="newsletter-success" [hidden]="!submitted">{{newsletterMessage}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-mosaico-blanco">
+      <footer class="container pt-4">
+          <div class="row px-2">
+              <div class="d-none d-md-block col-md-3 mb-4 h-100 align-self-center">
+                  <img class="final-strip-img" src="../../../assets/images/logo-footer.png">
+              </div>
+              <div class="col-12 col-sm-4 col-md-6 mb-4">
+                  <h5>Las propuestas</h5>
+                  <ng-template ngFor let-project [ngForOf]="projectList">
+                      <project-link [project]="project"></project-link>
+                  </ng-template>
+              </div>
+              <div class="col-12 col-sm-4 col-md-3 mb-4">
+                  <h5>Redes</h5>
+                  <a href="https://twitter.com/causas_comunes" target="_blank">Twitter</a>
+                  <a href="https://www.facebook.com/Causas-Comunes-449280685874685/" target="_blank">Facebook</a>
+                  <a href="https://www.instagram.com/causascomunes/" target="_blank">Instagram</a>
+              </div>
+              <div class="d-md-none col-12 mb-5 mt-3">
+                  <img class="d-block mx-auto" src="../../../assets/images/logo-footer.png" height="54px">
+              </div>
+          </div>
+      </footer>
+    </div>
+
+
+</div>

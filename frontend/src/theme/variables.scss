@@ -1,0 +1,77 @@
+/* Fonts */
+
+$basker: 'Libre Baskerville',
+serif;
+$lato: 'Lato',
+sans-serif;
+
+/* Colors */
+
+$blanco: #FFFFFF;
+$negro: #1A1A1A;
+$verde: #009295;
+$gris: #fbfbfb;
+$gris-oscuro: #ededed;
+$gris-thumbnail: #999;
+$violeta: #44235a;
+$violeta-claro: #832abb;
+$gris-texto: #888;
+$gris-texto-claro: #BBB;
+
+/* Colors diputadxs */
+
+$aFavor: #2eac67;
+$aFavor-light: #c7ffe1;
+$enContra: #ef0000;
+$enContra-light: #ffc7c7;
+$sinDefinir: #696969; /*????*/
+$sinDefinir-light: #eff1f4; /*????*/
+$noConfirmado: #696969;
+$noConfirmado-light: #eff1f4;
+$seAbstiene: #cc9209;
+$seAbstiene-light: #ffebbc;
+
+
+
+/*################# NUEVAS ############*/
+// Media Queries from Bootstrap
+$width-small: 576px; // Small devices (landscape phones, less than 768px)
+$width-medium: 768px; // Medium devices (tablets, less than 992px)
+$width-large: 992px; // Large devices (desktops, less than 1200px)
+$width-xlarge: 1200px;
+
+$barlow: 'Barlow', sans-serif;
+$basker: $barlow;
+$lato: $barlow;
+$azul-claro: #e4eefa;
+$azul-oscuro: #2a4b8c;
+$gris-oscuro: #696969;
+//font sizes
+$font-size-text-desktop: 1rem;
+$font-size-text-mobile: 0.875rem;
+//$font-size-subt-desktop: 1rem;
+//$font-size-subt-mobile: 1rem;
+$font-size-tit-desktop: 2rem;
+$font-size-tit-mobile: 1.315rem;
+
+@mixin font-size-media-medium($size, $size-medium){  
+  font-size: $size;
+  @media (min-width: $width-medium) {
+    font-size: $size-medium;
+  }
+}
+@mixin font-size-tit(){
+  @include font-size-media-medium($font-size-tit-mobile, $font-size-tit-desktop);
+}
+/*@mixin font-size-subt(){ 
+  @include font-size-media-medium($font-size-subt-mobile, $font-size-subt-desktop);
+}*/
+@mixin font-size-text(){ 
+  @include font-size-media-medium($font-size-text-mobile, $font-size-text-desktop);
+}
+
+@mixin border-radius($radius: 5px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}

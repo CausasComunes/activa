@@ -1,0 +1,45 @@
+@import '../../../theme/variables.scss';
+
+.title {
+    color: $azul-oscuro;
+    @include font-size-tit();
+    margin-top: 15px;
+}
+
+.subtitle {
+    color: $negro;
+    font-family: $lato;
+    font-weight: lighter;
+    @include font-size-text();
+    font-weight: normal;
+}
+
+.desc-strip{
+    @include font-size-text();
+}
+
+.desc-strip-home{
+    @include font-size-text();
+    padding: 20px 0 0;
+}
+
+.uso-strip-home{
+    @include font-size-text();
+    padding: 10px 0 30px;
+}
+
+:host ::ng-deep .project-carousel {
+    .item-carousel {
+        width: 86%;
+        margin: 0 7%;
+    }
+    .flickity-page-dots {
+        margin-bottom: 20px;
+    }
+    .flickity-prev-next-button.next {
+        right: -10px;
+    }
+    .flickity-prev-next-button.previous {
+        left: -10px;
+    }
+}

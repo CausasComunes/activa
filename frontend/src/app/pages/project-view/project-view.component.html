@@ -1,0 +1,47 @@
+<div class="bg-mosaico-blanco pb-5">
+  <div class="container">
+
+      <!-- Descripcion -->
+      <div class="row desc-strip">
+          <div class="col">
+              <div>
+                  <h1 class="desc-title text-center text-md-left">{{currentProject.name || "..."}}</h1>
+                  <div class="desc-text" [innerHtml]="projectDescription"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Politicxs -->
+  <politician-slider [politiciansList]="politiciansListSlider" [project]="currentProject"></politician-slider>
+</div>
+<div [hidden]="currentProject.show_tally == 0" class="w-100 separador"></div>
+
+<div class="mb-5 mb-md-0 w-100 separador"></div>
+
+<ng-template [ngIf]="!currentProject.es_debate">
+  <div class="w-100 bg-blanco">  
+    <propuesta-slider [propuestasResumen]="propuestasResumen" [propuestas]="propuestas" [changeLink]="changeLink" [changeText]="changeText" [propuestaLink]="propuestaLink"></propuesta-slider>
+  </div>
+</ng-template>
+
+<!-- Contador -->
+<tally [ammount]="currentProject.tally"></tally>
+
+<div class="w-100 bg-mosaico-blanco py-2" [hidden]="(currentProject.show_videos == 0 || currentProject.videos.length < 1) && currentProject.show_text == 0">
+    <!-- Videos -->
+    <video-slider [hidden]="(currentProject.show_videos == 0 || currentProject.videos.length < 1)" [project]="currentProject"></video-slider>
+    <!-- Articulo -->
+    <article [hidden]="currentProject.show_text == 0" [article]="currentProject.text" [image]="currentProject.image" [dir]="currentProject.dir"></article>
+</div>
+
+<div class="w-100 bg-azul-claro py-5" [hidden]="currentProject.show_tally == 0">
+    <div class="container">
+        <!-- Conteo -->
+        <div class="row">
+            <div class="col col-12">
+                <stats [project]="currentProject" [requestFullList]="true" [politiciansList]="null"></stats>
+            </div>
+        </div>
+    </div>
+</div>

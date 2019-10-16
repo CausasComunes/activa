@@ -1,0 +1,93 @@
+<div class="politician-card">
+    <div class="card-image-container">
+        <img [src]="imgUrl" class="card-img-top" alt="{{politician.first_name + ' ' + politician.last_name || '...'}}">
+    </div>
+    <div class="card-body {{stance}}">
+      <ng-template [ngIf]="!_project.es_debate">
+          <span class="postura px-4 py-1">{{stance_postura}}</span>
+      </ng-template>
+        <span class="title mt-2">{{politician.first_name}} {{politician.last_name}}</span>
+        <span class="subtitle">{{politician.position && politician.position.name}}</span>
+        <span class="subtitle">{{politician.party.name}}</span>
+        <div class="button-container mt-auto px-4">
+            <button *ngIf="politician.twitter" type="button" class="contact-button" (click)="openTwitterWindow()">
+                <i class="fab fa-twitter"></i>&emsp;Twittear
+            </button>
+            <button *ngIf="politician.facebook" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#facebookModal' + politician.id">
+                <i class="fab fa-facebook-f"></i>&emsp;Facebook
+            </button>
+            <button *ngIf="politician.instagram" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#instagramModal' + politician.id">
+                <i class="fab fa-instagram"></i>&emsp;Instagram
+            </button>
+            <button *ngIf="politician.phone" type="button" class="contact-button" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#callModal' + politician.id">
+                <i class="fas fa-phone"></i>&emsp;Llamar
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Facebook -->
+<div class="modal fade" id="facebookModal{{politician.id}}" tabindex="-1" role="dialog" aria-labelledby="Escribir por Facebook" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div>
+                    Te dejamos una sugerencia de texto para escribirle. Podés escribirle un mensaje privado o escribirle en el muro (lo que prefieras): <br>
+                    <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="openFacebookWindow()" class="btn btn-primary btn-aec btn-center"><i class="fab fa-facebook-f"></i>&emsp;Ir a su Facebook</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal Instagram -->
+<div class="modal fade" id="instagramModal{{politician.id}}" tabindex="-1" role="dialog" aria-labelledby="Escribir por Instagram" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div>
+                    Te dejamos una sugerencia de texto para escribirle. Podés escribirle un mensaje privado o escribirle en sus publicaciones (lo que prefieras): <br>
+                    <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="openInstagramWindow()" class="btn btn-primary btn-aec btn-center"><i class="fab fa-instagram"></i>&emsp;Ir a su Instagram</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal LLamada -->
+<div class="modal fade" id="callModal{{politician.id}}" tabindex="-1" role="dialog" aria-labelledby="Llamar" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <div>
+                    Podés probar de llamarlo al siguiente número: <br>
+                    <div class="example-message py-2 px-3 my-4">{{politician.phone}}</div>
+                    <br>Te dejamos una idea para que te inspires: <br>
+                    <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a (click)="tallyUp()" href="tel:{{politician.phone}}" class="btn btn-primary btn-aec btn-center">Llamar</a>
+            </div>
+        </div>
+    </div>
+</div>

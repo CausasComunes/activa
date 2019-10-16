@@ -1,0 +1,59 @@
+@import '../../../theme/variables.scss';
+
+.project-card {
+    background-color: $blanco;
+    margin-top: 5px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.07), 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    min-height: 250px;
+
+    .col-img, .col-txt {
+        @media (min-width: 768px) {
+            height: 300px !important;
+        }
+    }
+  
+    .col-img {
+        padding: 0px !important;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        border-radius: 20px 20px 0px 0px;
+        background-position: left;
+        min-height: 100px;
+        background-size: 110px;
+        @media (min-width: $width-medium) {
+          background-position: top center;
+          background-size: 200px;
+          border-radius: 20px 0px 0px 20px;
+        }
+        &.center-img {
+          background-position: center;
+          background-size: cover;
+          min-height: 300px;
+        }
+        .project-title {
+            position: relative;
+            text-align: left;
+            font-family: $basker;
+            color: $blanco;
+            font-size: 35px;
+            top: 22px;
+            font-weight: bold;
+            left: 100px;
+            @media (min-width: $width-medium) {
+              font-size: 40px;
+              top: 18px;
+                top: 180px;
+                text-align: center;
+                left: inherit;
+            }
+        }
+    }
+
+    .project-description {
+        height: calc(100% - 34px);
+        @include font-size-media-medium(14px, 16px);
+        line-height: 1.2em;
+        /* En src/theme/general-classes.scss están los estilos de los títulos (línea 16) */
+    }
+}

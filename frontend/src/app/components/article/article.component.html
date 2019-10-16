@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-12 my-5 p-0 article-container d-flex">
+            <div class="col p-0 bg-thumbnail article-image" [style.background]="backgroundImage"></div>
+            <div class="col p-4">
+                <div class="article-preview" [innerHTML]="articleSanitarized"></div>
+                <br>
+                <button class="btn-aec" data-toggle="modal" data-target="#modalArticle">Texto completo</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalArticle" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div [innerHTML]="articleSanitarized"></div>
+                <button type="button" class="btn btn-aec btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

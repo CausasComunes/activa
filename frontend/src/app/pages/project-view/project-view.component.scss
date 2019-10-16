@@ -1,0 +1,12 @@
+@import '../../../theme/variables.scss';
+.desc-title {
+    font-family: $basker;
+    margin-bottom: 1.5em;
+    @include font-size-tit();
+}
+
+.desc-text {
+    font-family: $lato;
+    margin-top: -20px;
+    @include font-size-text();
+}

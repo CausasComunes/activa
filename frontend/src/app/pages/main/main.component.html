@@ -1,0 +1,80 @@
+<div class="bg-mosaico-blanco pt-4">  
+<ng-template [ngIf]="highlightedProjectExists">
+    <!-- Título y descripcion-->
+    <div class="container">
+        <div class="row desc-strip-home">
+            <div class="col">
+                <div>
+                    <h1 class="desc-title text-center text-md-left">{{highlightedProject.name || "..."}}</h1>
+                    <div class="desc-text" [innerHtml]="projectDescription"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!--<div class="text-center mt-3 px-4">
+      <ng-template [ngIf]="!isMobileView">
+          <iframe width="764" height="430" src="https://www.youtube.com/embed/ZPR8ih2LmCw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </ng-template>
+      <ng-template [ngIf]="isMobileView">
+        <ng-template [ngIf]="!isIOS">
+          <iframe width="310" height="160" id="player" class="youtube-player" type="text/html" src="http://www.youtube.com/embed/ZPR8ih2LmCw?controls=0&showinfo=0&showsearch=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </ng-template>
+        <ng-template [ngIf]="isIOS">
+          <a href="http://www.youtube.com/watch?v=ZPR8ih2LmCw">
+            Primer Debate Presidencial<br>
+            <img class="d-block mx-auto mt-1" src="http://img.youtube.com/vi/ZPR8ih2LmCw/0.jpg" border="0" width="310" height="160" alt="Debate de candidatos a Jefe de Gobierno de Buenos Aires" />
+            YouTube Video
+          </a>
+        </ng-template>
+      </ng-template>
+    </div>-->
+
+    <politician-slider [politiciansList]="politiciansList" [project]="highlightedProject"></politician-slider>
+  
+    <div class="container">
+        <div class="row uso-strip-home">
+            <div class="col">
+                <div>
+                    <div class="desc-text">Cuando hagas click en los botones que están debajo de lxs candidatxs vas a poder contactarte directamente con ellxs y pedirles que apoyen nuestras causas (o decirles lo que quieras). Más abajo podés encontrar más información nuestras causas comunes. La agenda electoral la definimos nosotres. Sumate.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 w-100 separador"></div>
+</ng-template>
+</div>
+
+<div id="proyectos" class="w-100 bg-mosaico-blanco">
+    <div class="container">
+        <!-- Proyectos -->
+        <div class="row">
+            <div class="col py-4 text-center text-md-left">
+                <h2 class="title">Nuestras Causas Comunes</h2>
+                <h4 class="subtitle">Ingresá a cada una de las causas para obtener más información y activar a lxs candidatxs.</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-12 mb-4">
+                <ng-template [ngIf]="!isMobileView">
+                    <ng-template ngFor let-p [ngForOf]="projectList">
+                        <project-card [project]="p"></project-card>
+                    </ng-template>
+                </ng-template>
+                <ng-template [ngIf]="isMobileView">
+                    <ng-template [ngIf]="projectList">
+                        <div class="project-carousel">
+                            <ng-template ngFor let-p [ngForOf]="projectList">
+                                <project-card [project]="p" class="item-carousel"></project-card>
+                            </ng-template>
+                        </div>
+                    </ng-template>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contador -->
+<tally [ammount]="tally"></tally>

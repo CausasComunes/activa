@@ -1,0 +1,63 @@
+<div class="container">
+
+    <button class="btn btn-primary btn-aec btn-lg my-4" type="button" [routerLink]="['/proyecto',project.slug]"><i class="fas fa-arrow-left"></i> Volver</button>
+
+    <br>
+
+    <!--<stats [project]="project" [requestFullList]="false" [politiciansList]="politiciansList"></stats>
+
+    <br>-->
+
+    <div class="row mb-5">
+        <div class="col col-12">
+            <div>
+                <span class="message"><!--Decile a lxs politicxs lo que pensás. Conocé sus posturas.--></span>
+                <!--<div class="pos aFavor">A FAVOR</div>
+                <div class="pos enContra">EN CONTRA</div>
+                <div class="pos noConfirmado">NO CONFIRMADO</div>
+                <div class="pos seAbstiene">SE ABSTIENE</div>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col">
+            <label class="filter-label">Posición</label>
+            <select name="selectedPosition" [(ngModel)]="selectedPosition" class="form-control" (change)="onFilterChange('position', $event.target.value)">
+                <option>Todas</option>
+                <option value="AFavor">A favor</option>
+                <option value="EnContra">En contra</option>
+                <option value="NoConfirmado">No confirmado</option>
+                <option value="SeAbstiene">Se abstiene</option>
+            </select>
+        </div>
+        <div class="col">
+            <label class="filter-label">Bloque</label>
+            <select name="selectedParty" [(ngModel)]="selectedParty" class="form-control" (change)="onFilterChange('party', $event.target.value)">
+                <option>Todos</option>
+                <option *ngFor="let op of partiesOptions" [value]="op.name">{{op.name}}</option>
+            </select>
+        </div>
+        <div class="col">
+            <label class="filter-label">Distrito</label>
+            <select name="selectedDistrict" [(ngModel)]="selectedDistrict" class="form-control" (change)="onFilterChange('district', $event.target.value)">
+                <option>Todos</option>
+                <option *ngFor="let op of districtsOptions" [value]="op.hasc">{{op.name}}</option>
+            </select>
+        </div>
+        <div class="col">
+            <label class="filter-label">&nbsp;</label>
+            <button (click)="resetFilter()" class="btn btn-aec btn-block btn-filter my-0">Borrar filtros</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let politician of politiciansList">
+            <politician-card [project]="project" [politician]="politician"></politician-card>
+        </div>
+    </div>
+
+</div>
+
+<!-- Contador -->
+<tally [ammount]="project.tally"></tally>

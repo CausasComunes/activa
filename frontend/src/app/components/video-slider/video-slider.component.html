@@ -1,0 +1,14 @@
+<div class="container my-4">
+    <div class="row">
+        <div class="col">
+            <h2 class="title">Más información</h2>
+        </div>
+    </div>
+</div>
+
+<slider>
+    <div *ngFor="let video of project.videos" class="video-container">
+        <iframe [src]='sanitarize(video.url)' style="width: 372px; height: 210px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+        </iframe>
+    </div>
+</slider>

@@ -1,0 +1,40 @@
+@import '../../../theme/variables.scss';
+
+h4 {
+    font-family: $basker;
+    color: $azul-oscuro;
+    font-size: 2em;
+    font-weight: 400;
+    
+  span{
+    font-weight: 600;
+  }
+  
+  .megafono-derecha, .megafono-izquierda{
+    height: 70px;
+    margin-right: auto;
+    @media (min-width: $width-medium) {
+      height: 50px;
+    }
+    @media (min-width: $width-large) {
+      height: 80px;
+    }
+    @media (max-width: $width-medium) {
+      margin-left: auto !important;
+    }
+  }
+}
+
+.underline {
+    text-decoration: none;
+    position: relative;
+    &:after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -4px;
+        height: 3px;
+        content: " ";
+        background: $violeta-claro;
+    }
+}
