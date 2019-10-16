@@ -28,4 +28,4 @@ Para agregar urls al backend, sea para la api o para el panel, hay que editar el
 
 ### Bugs conocidos
 #### Imágenes JPG
-El backend no admite imágenes JPG/JPEG. Deben ser convertidas a png u otro formato para poder ser subidas.
+El backend no admite imágenes JPG/JPEG. Deben ser convertidas a PNG u otro formato para poder ser subidas.
