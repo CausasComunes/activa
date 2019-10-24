@@ -38,10 +38,15 @@ Para probar el frontend deben tener Node y Yarn instalados; como mencionamos ant
 
 ### Algunas configuraciones útiles
 #### Conexión desde el frontend hacia el backend
-Esto se hace editando los parámetros `api` e `imgBase` dentro de [`frontend/package.json`](frontend/package.json). Estas variables las levanta el frontend en el archivo `src/environments/environment.ts`.
+Esto se hace editando los parámetros `api` e `imgBase` dentro de [`frontend/package.json`](frontend/package.json). Estas variables las levanta el frontend en el archivo `src/environments/environment.ts`. 
+
+En entorno de producción (Docker) estas URLs están harcodeadas en `src/environments/environment.prod.ts`. 
 
 #### Agregar rutas al backend
 Para agregar rutas al backend, sea para la API o para el panel de administración, hay que editar el archivo `config/routes.php` y agregar la ruta, y editar el archivo `src/Controller/AppController.php` para admitir el acceso a la función (action) que utiliza dicha ruta.
+
+#### Hostear el frontend en la LAN para compartirlo localmente
+Para esto se puede hacer `yarn startlan` en vez de `yarn start` pero deben editar la IP que usa, dentro de `packaje.json`, el la sección `scripts`, en el comando `startlan` (línea ~11)
 
 ### Bugs conocidos
 #### Imágenes JPG
