@@ -46,3 +46,6 @@ Para agregar rutas al backend, sea para la API o para el panel de administració
 ### Bugs conocidos
 #### Imágenes JPG
 El backend no admite imágenes JPG/JPEG. Deben ser convertidas a PNG, GIF, u otro formato para poder ser subidas.
+
+#### Frontend en iPhones
+En algunos iPhones el frontend no carga, o carga por la mitad y queda congelado.
