@@ -53,4 +53,4 @@ Para esto se puede hacer `yarn startlan` en vez de `yarn start` pero deben edita
 El backend no admite imágenes JPG/JPEG. Deben ser convertidas a PNG, GIF, u otro formato para poder ser subidas.
 
 #### Frontend en iPhones
-En algunos iPhones el frontend no carga, o carga por la mitad y queda congelado.
+En algunos iPhones 6 el frontend no carga, o carga por la mitad y queda congelado.
