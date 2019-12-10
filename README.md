@@ -12,7 +12,13 @@ También existen los *cargos*. Estos cargos se cargan libremente en el sistema. 
 Lxs candidatxs, además, tienen una *postura* por cada proyecto, definida en la pantalla de edición de cada candidatx; esta puede ser: a favor, en contra, se abstiene, o no confirmado. A partir de la postura que haya tomada lx candidatx, la plataforma sugerirá un *mensaje* para enviarle. Estos mensajes se definen en cada proyecto, por cada postura posible, y pueden ser varios mensajes por postura.
 
 ## Servicios de la plataforma
-Esta plataforma consta de un frontend y un backend. El frontend está hecho en *Angular 5.2.10*, probado con *Yarn 1.19.1* y *Node 10.16.3*. El backend está hecho en *CakePHP 3.8.\**, con *PHP 7.3.3* + *Apache* y *MySql*. El frontend busca el contenido e imágenes desde la API del backend. El backend, además de exponer una API, tiene un panel de adminstración web para cargar datos manualmente.
+Esta plataforma consta de un frontend y un backend.
+
+El frontend está hecho en **Angular 5.2.10**, probado con **Yarn 1.19.1** y **Node 10.16.3**.
+
+El backend está hecho en **CakePHP 3.8.\***, con **PHP 7.3.3** + **Apache** y **MySql**.
+
+El frontend busca el contenido e imágenes a la API del backend. El backend, además de exponer una API para el frontend, tiene un panel de adminstración web para cargar datos manualmente.
 
 ## Ejecutar el proyecto localmente
 #### Backend
