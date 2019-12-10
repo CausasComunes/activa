@@ -54,6 +54,17 @@ Para agregar rutas al backend, sea para la API o para el panel de administració
 #### Hostear el frontend en la LAN para compartirlo localmente
 Para esto se puede hacer `yarn startlan` en vez de `yarn start` pero deben editar la IP que usa, dentro de `packaje.json`, el la sección `scripts`, en el comando `startlan` (línea ~11)
 
+## Montaje a producción
+#### Backend
+Deberá suministrar las variables de entorno de conexión a la base de datos MySql. Estas son:
+- `MYSQL_URL` ip/dominio del servidor MySql
+- `MYSQL_PORT` puerto del servidor
+- `MYSQL_DATABASE` nombre de la base de datos MySql
+- `MYSQL_USERNAME` usuarix con permisos sobre la anterior base de datos
+- `MYSQL_PASSWORD` contraseña de dichx usuarix
+
+Además, de usar Docker, deberá hacer un volumen en la ruta `/var/www/html/webroot/img` **para no perder las imágenes subidas por lxs usuarixs** al reiniciar el sistema.
+
 ## Bugs conocidos
 #### Imágenes JPG
 El backend no admite imágenes JPG/JPEG. Deben ser convertidas a PNG, GIF, u otro formato para poder ser subidas.
