@@ -14,7 +14,7 @@ Lxs candidatxs, además, tienen una *postura* por cada proyecto, definida en la 
 ## Servicios de la plataforma
 Esta plataforma consta de un frontend y un backend.
 
-El frontend está hecho en **Angular 5.2.10**, probado con **Yarn 1.19.1** y **Node 10.16.3**.
+El frontend está hecho en **Angular 5.2.10**, probado con **Yarn 1.19.1** y **Node lts/carbon (v8.16.1)**.
 
 El backend está hecho en **CakePHP 3.8.\***, con **PHP 7.3.3** + **Apache** y **MySql**.
 
@@ -25,7 +25,7 @@ El frontend busca el contenido e imágenes a la API del backend. El backend, ade
 Para probar el backend basta con hacer `docker-compose up` detro de la carpeta raíz del mismo. Esto creará un contenedor de MySql y otro con la aplicación principal, como se puede ver en su  [`docker-compose.yaml`](backend/docker-compose.yaml). Una vez iniciados, podrán navegar a [http://localhost:7000/](http://localhost:7000/) y acceder al panel de administración con las credenciales `admin`/`admin`.
 
 #### Frontend
-Para probar el frontend deben tener Node y Yarn instalados; como mencionamos anteriormente, las versiones que a nosotros no nos trajeron problemas son las 10.16.3 y 1.19.1 respectivamente. Ya teniendo esto, primero debemos instalar todas las dependencias del proyecto haciendo `yarn install` dentro de la carpeta del frontend. Si todo va bien, ya podemos hacer `yarn start` para hostear el servicio en [http://localhost:4200/](http://localhost:4200/).
+Para probar el frontend deben tener Node y Yarn instalados; como mencionamos anteriormente, las versiones que a nosotros no nos trajeron problemas son las lts/carbon (v8.16.1) y 1.19.1 respectivamente. Ya teniendo esto, primero debemos instalar todas las dependencias del proyecto haciendo `yarn install` dentro de la carpeta del frontend. Si todo va bien, ya podemos hacer `yarn start` para hostear el servicio en [http://localhost:4200/](http://localhost:4200/).
 
 ## Listado de archivos importantes 
 #### Frontend
@@ -71,3 +71,6 @@ El backend no admite imágenes JPG/JPEG. Deben ser convertidas a PNG, GIF, u otr
 
 #### Frontend en iPhones
 En algunos iPhones 6 el frontend no carga, o carga por la mitad y queda congelado.
+
+#### Error compilando módulos del frontend
+Si salen errores al intentar hacer `yarn` o `yarn install` en el frontend es probable que estén usando otra versión de node (v10 o v12). Verificar que `node -v` devuelva **v8.17.0**.
