@@ -37,7 +37,7 @@
         "ng2-ckeditor": "^1.2.2",
         "ng2-date-countdown": "^1.0.2",
         "ng2-google-charts": "^3.4.0",
-        "node-sass": "^4.7.2",
+        "node-sass": "^4.13.1",
         "popper.js": "^1.12.9",
         "primeicons": "^1.0.0",
         "primeng": "6.1.7",
